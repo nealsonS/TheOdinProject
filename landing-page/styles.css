@@ -73,3 +73,39 @@ div.container {
     width: 50px;
     height: 300px;
 }
+
+.body.container{
+    display: block;
+}
+
+.body h1 {
+    text-align: center;
+}
+
+.body.img {
+    display: flex;
+    padding: 0px 10px;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.body.imgblock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}
+
+.body.imgblock img{
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    width:100%;
+    border: 100px #3882F6;
+    flex:1;
+}
+
+.body.body.imgblock p {
+    text-align: center;
+    width: 120px;
+}
