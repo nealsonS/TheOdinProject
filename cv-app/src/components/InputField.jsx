@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function InputField({
+export default function InputField({
   field,
   isSubmitted = false,
   placeholder = field,

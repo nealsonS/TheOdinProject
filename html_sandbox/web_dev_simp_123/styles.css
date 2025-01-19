@@ -1,0 +1,20 @@
+.child {
+    height: 20px;
+}
+
+.parent {
+  background-color: cyan;  
+  padding: 1vh;
+}
+
+.child-one {
+    background-color: greenyellow;
+}
+
+.child-two {
+    background-color: orangered;
+}
+
+.child-three {
+    background-color: pink;
+}

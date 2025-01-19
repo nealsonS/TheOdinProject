@@ -1,0 +1,35 @@
+.container {
+    display: grid;
+    overflow: auto;
+    gap: 4px;
+    grid-template-rows: repeat(3, 50px);
+    grid-template-columns: repeat(5, 50px);
+    justify-content: center;
+    align-content: center;
+    background-color: green;
+    grid-template-areas:
+        "home home home home logo"
+        "image image description description"
+        "image image description description";
+}
+
+.section {
+    border: 2px solid;
+}
+
+#home {
+    grid-area: home;
+    background-color: aqua;
+}
+
+#image {
+    grid-area: image;
+}
+
+#logo {
+    grid-area: logo;
+}
+
+#description {
+    grid-area: description;
+}
