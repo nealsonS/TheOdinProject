@@ -1,10 +1,9 @@
-import { useState, useContext, useEffect } from "react";
+import Item from "./Item";
+import { useContext } from "react";
 import CartContext from "../context/CartContext";
-import FetchImage from "./FetchImage";
 
 const Product = () => {
-  useEffect(() => {}, []);
-  const [cart, addToCart] = useContext(CartContext);
+  const { cart, addToCart } = useContext(CartContext);
   const containerStyle = {
     borderRadius: "2px",
     border: "2px",
@@ -15,8 +14,10 @@ const Product = () => {
 
   return (
     <div style={containerStyle}>
-      <FetchImage></FetchImage>
-      <button type="button">Add to Cart!</button>
+      <Item name="1"></Item>
+      <Item name="2"></Item>
+      <Item name="3"></Item>
+      <Item name="4"></Item>
     </div>
   );
 };

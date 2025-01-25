@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
 import Header from "../components/Header";
-import Product from "../components/Product";
+import ProductList from "../components/ProductList";
 
 export default function App() {
   const { cart, addToCart } = useContext(CartContext);
@@ -9,7 +9,7 @@ export default function App() {
     <>
       <Header></Header>
       <h1>App</h1>
-
+      <ProductList> </ProductList>
     </>
   );
 }
