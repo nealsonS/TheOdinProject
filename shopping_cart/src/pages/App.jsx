@@ -13,7 +13,7 @@ export default function App() {
           textAlign: "center",
         }}
       >
-        App
+        shopping cart
       </h1>
       <ProductList> </ProductList>
     </>
