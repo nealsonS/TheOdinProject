@@ -8,7 +8,13 @@ export default function App() {
   return (
     <>
       <Header></Header>
-      <h1>App</h1>
+      <h1
+        style={{
+          textAlign: "center",
+        }}
+      >
+        App
+      </h1>
       <ProductList> </ProductList>
     </>
   );

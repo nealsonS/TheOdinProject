@@ -2,23 +2,22 @@ import { useState, useContext, useEffect } from "react";
 import CartContext from "../context/CartContext";
 
 const Item = ({ name }) => {
-  const {cart, addToCart} = useContext(CartContext);
+  const { cart, addToCart } = useContext(CartContext);
   const [imgSrc, setImgSrc] = useState("");
   const containerStyle = {
-    "display": "flex",
-    "flexDirection": "column",
-    "justifyContent": "center",
-    "alignItems": "center",
-    "borderRadius": "10px",
-    "border": "solid"
-
-  }
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "10px",
+    border: "solid",
+  };
 
   const imgStyle = {
-    "borderRadius": "2px",
-    "maxHeight": "200px",
-    "maxWidth": "200px"
-  }
+    borderRadius: "2px",
+    maxHeight: "200px",
+    maxWidth: "200px",
+  };
 
   const randomImgApi = "https://picsum.photos/200/200";
   useEffect(() => {
@@ -36,7 +35,7 @@ const Item = ({ name }) => {
       .catch((err) => {
         console.error("Error fetching image:", err.message);
       });
-  }, []); // Dependency array ensures it runs only once
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
