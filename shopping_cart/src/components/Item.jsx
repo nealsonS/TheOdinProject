@@ -1,8 +1,10 @@
 import { useState, useContext, useEffect } from "react";
 import CartContext from "../context/CartContext";
+import ImgLinkContext from "../context/ImgLinkContext";
 
 const Item = ({ name }) => {
   const { cart, addToCart } = useContext(CartContext);
+  const { imgLinks, addImgLink } = useContext(ImgLinkContext);
   const [imgSrc, setImgSrc] = useState("");
   const containerStyle = {
     display: "flex",
@@ -21,21 +23,28 @@ const Item = ({ name }) => {
 
   const randomImgApi = "https://picsum.photos/200/200";
   useEffect(() => {
-    fetch(randomImgApi, { mode: "cors" })
-      .then((response) => {
-        console.log("Response: ", response);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch image! Status: ${response.status}`);
-        }
-        return response.url;
-      })
-      .then((url) => {
-        setImgSrc(url);
-      })
-      .catch((err) => {
-        console.error("Error fetching image:", err.message);
-      });
-  }, []);
+    if (name in imgLinks) {
+      setImgSrc(imgLinks[name]);
+    } else {
+      fetch(randomImgApi, { mode: "cors" })
+        .then((response) => {
+          console.log("Response: ", response);
+          if (!response.ok) {
+            throw new Error(
+              `Failed to fetch image! Status: ${response.status}`,
+            );
+          }
+          return response.url;
+        })
+        .then((url) => {
+          setImgSrc(url);
+          addImgLink(name, url);
+        })
+        .catch((err) => {
+          console.error("Error fetching image:", err.message);
+        });
+    }
+  }, [name, imgLinks, addImgLink]);
 
   const handleClick = (e) => {
     e.preventDefault();

@@ -10,10 +10,12 @@ function Cart() {
       <h1>Cart</h1>
       <ol>
         {cart.map((elem) => {
-          return <>
-            <img src={elem.imgSrc}></img>
-            <li key={elem.imgSrc}>{elem.name}</li>
-          </>
+          return (
+            <>
+              <img src={elem.imgSrc}></img>
+              <li key={elem.imgSrc}>{elem.name}</li>
+            </>
+          );
         })}
       </ol>
     </>
