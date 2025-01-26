@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/new.css">
+  <title>Add Message Form</title>
+</head>
+
+<body>
+  <nav>
+    <% for( let index = 0; index < locals.routes.length; index++ ) { %>
+    <%- include("nav", {...locals.routes[index]}) %>
+    <% } %>
+  </nav>
+  <form action="/new" method="post" class="flex flex-column">
+    <div class="flex flex-column">
+      <label for="user">user</label>
+      <input type="text" id="user" name="user">
+    </div>
+
+    <!-- <div class="flex flex-column">
+      <label for="date">Date</label>
+      <input type="text" id="date" name="added">
+    </div> -->
+
+    <div class="flex flex-column">
+      <label for="text">Text</label>
+      <input type="text" id="text" name="inputText">
+    </div>
+
+    <button type="submit">Add Message! </button>
+  </form>
+</body>
+
+</html>

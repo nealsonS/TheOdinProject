@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Board</title>
+</head>
+
+<body>
+  <nav>
+    <% for( let index = 0; index < locals.routes.length; index++ ) { %>
+    <%- include("nav", {...locals.routes[index]}) %>
+    <% } %>
+  </nav>
+  <h1>Hello! This is my message board!</h1>
+  <ul>
+    <% for( let index = 0; index < messages.length; index++ ) { %>
+    <%- include("messages", {message: messages[index]}) %>
+    <% } %>
+  </ul>
+</body>
+
+</html>
