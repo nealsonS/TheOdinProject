@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- href now reference relative starting from the express.static(folderPath) -->
+  <link rel="stylesheet" href="/styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include('navbar', {links: links}) %>
+  <form action="/" method="POST">
+    <label for="name"><%= locals.ame %></label>
+    <input type="text" id="name" name="name" />
+    <button type="submit">Test</button>
+  </form>
+  <ul>
+    <% users.forEach(element => { %>
+    <%- include("user", {user: element}) %>
+    <% }); %>
+  </ul>
+  <%= message %>
+</body>
+
+</html>
